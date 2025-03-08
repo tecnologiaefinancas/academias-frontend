@@ -1,0 +1,46 @@
+.gym-list-container {
+    width: 70%;
+    margin: 0 auto;  
+    background-color: whitesmoke;
+    border-radius: 1px;
+    margin-top: 0px;
+    padding: 20px;
+}
+
+.gym-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    padding: 20px 30px;
+    border: 1px solid whitesmoke;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: white;
+}
+
+.gym-details {
+    flex: 1;
+    margin-right: 10px;
+}
+
+.gym-map {
+    flex: 1;
+}
+
+h2 {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;;
+}
+
+.p-title {
+    font-weight: bold;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 16px;
+    line-height: 1.25; 
+}
+
+.p-answer {
+    font-weight: normal;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 14px;
+    line-height: 1.25; 
+}
