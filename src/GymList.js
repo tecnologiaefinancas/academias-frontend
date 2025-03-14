@@ -3,6 +3,7 @@ import { getGyms } from "./services/gymService";
 import Icon from "@mdi/react";
 import { mdiInstagram, mdiMagnify, mdiMapMarker } from "@mdi/js";
 import "./GymList.css";
+import GymGallery from "./GymGallery";
 
 const GymList = () => {
   const [gyms, setGyms] = useState([]);
@@ -65,6 +66,7 @@ const GymList = () => {
                 </a>
               </p>
               {gym.imageUrl && <img src={gym.imageUrl} alt={gym.title} />}
+              <GymGallery />
             </div>
             <div className="gym-map">
               {gym.mapUrl && (
@@ -83,6 +85,7 @@ const GymList = () => {
                 </a>
               </p>
             </div>
+
           </li>
         ))}
       </ul>

@@ -21,27 +21,65 @@
 .gym-details {
     flex: 1;
     margin-right: 10px;
+    margin-bottom: 10px;
 }
 
 .gym-map {
     flex: 1;
 }
 
+.search-container {
+    max-width: 21%;
+    margin: 1rem 2.2rem 2rem;
+  
+    display: flex;
+    align-items: center;
+  
+    padding: 1rem 1rem;
+    border-radius: 1rem;
+    background: #e9e9e9;
+  }
+  
+.search-input {
+    max-width: 70%;
+    flex: 1;
+    border: 2px;
+    font-size: 1rem;
+    font-family: var(--font-raleway);
+    font-weight: 500;
+    padding-right: 2rem;
+  
+    outline: none;
+    color: #a1a1a1;
+    background: #e9e9e9;
+  }
+
 h2 {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;;
+    font-family: var(--font-raleway);
+}
+
+a {
+    font-family: var(--font-raleway); 
+    color:#313131; 
+    text-decoration: none;
+}
+
+a:hover {
+    color: #8c8c8c; /* Tom mais claro */
 }
 
 .p-title {
     font-weight: bold;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: var(--font-raleway);
     font-size: 16px;
     line-height: 1.25; 
+    color: #7b7b7b;
 }
 
 .p-answer {
     font-weight: normal;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 14px;
+    font-family: var(--font-raleway);
+    font-size: 16px;
     line-height: 1.25; 
 }
 
