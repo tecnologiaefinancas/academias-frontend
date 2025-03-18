@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { getGyms } from './services/gymService';
-import GymList from './GymList';
-import Header from './Header';
+import GymList from './components/GymList';
+import Header from './components/Header';
 import './App.css'
 
 const App = () => {
