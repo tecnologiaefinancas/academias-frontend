@@ -4,6 +4,7 @@ import Icon from "@mdi/react";
 import { mdiInstagram, mdiMagnify, mdiMapMarker } from "@mdi/js";
 import "./GymList.css";
 import GymGallery from "../components/GymGallery";
+import InstagramEmbed from "./InstagramReel";
 
 const GymList = () => {
   const [gyms, setGyms] = useState([]);
@@ -40,8 +41,9 @@ const GymList = () => {
 
       <ul>
         {gyms.map((gym) => (
-          <li key={gym.id} className="gym-item">
+            <li key={gym.id} className="gym-item">
             <div className="gym-details">
+           
               <h2>{gym.name}</h2>
               <p className="p-title">
                 <Icon path={mdiMapMarker} size="14px" color="#000" /> Endereço:
@@ -61,7 +63,14 @@ const GymList = () => {
                   {" "} @{gym.instagram}
                 </a>
               </p>
-              <GymGallery />
+              <p className="p-title">Fotos:
+              <GymGallery images={gym.imageUrl} />
+              </p>
+              <br></br>
+              {gym.reelInstagramUrl && (
+                <InstagramEmbed reelId={gym.reelInstagramUrl} />
+              )}
+      
             </div>
             <div className="gym-map">
               {gym.mapUrl && (
@@ -86,6 +95,8 @@ const GymList = () => {
       </ul>
     </div>
   );
+
+
 };
 
 export default GymList;

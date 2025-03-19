@@ -1,0 +1,93 @@
+.gym-list-container {
+    width: 70%;
+    margin: 0 auto;  
+    background-color: whitesmoke;
+    border-radius: 1px;
+    margin-top: 0px;
+    padding: 20px;
+}
+
+.gym-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    padding: 20px 30px;
+    border: 1px solid whitesmoke;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: white;
+}
+
+.gym-details {
+    flex: 1;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+.gym-map {
+    flex: 1;
+}
+
+.search-container {
+    max-width: 21%;
+    margin: 1rem 2.2rem 2rem;
+  
+    display: flex;
+    align-items: center;
+  
+    padding: 1rem 1rem;
+    border-radius: 1rem;
+    background: #e9e9e9;
+  }
+  
+.search-input {
+    max-width: 70%;
+    flex: 1;
+    border: 2px;
+    font-size: 1rem;
+    font-family: var(--font-raleway);
+    font-weight: 500;
+    padding-right: 2rem;
+  
+    outline: none;
+    color: #a1a1a1;
+    background: #e9e9e9;
+  }
+
+h2 {
+    color:#313131; 
+    font-family: var(--font-raleway);
+}
+
+a {
+    font-family: var(--font-raleway); 
+    color:#313131; 
+    text-decoration: none;
+}
+
+a:hover {
+    color: #636363; /* Tom mais claro */
+}
+
+.p-title {
+    font-weight: bold;
+    font-family: var(--font-raleway);
+    font-size: 16px;
+    line-height: 1.50; 
+    color: #515151;
+}
+
+.p-answer {
+    font-weight: normal;
+    font-family: var(--font-raleway);
+    font-size: 16px;
+    line-height: 1.25; 
+}
+
+.responsive-iframe {
+    width: 100%; 
+    height: 80%; 
+    max-width: 400px; 
+    max-height: 300px; 
+    border: 0;
+}
