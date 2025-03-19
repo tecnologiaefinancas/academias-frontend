@@ -26,7 +26,7 @@ const GymList = () => {
   const mapUrl = "https://www.google.com/maps/embed?";
 
   return (
-    <div className="gym-list-container">
+    <div className="gym-wrapper">
       {/* Search Input */}
       <div className="search-container">
         <Icon path={mdiMagnify} size="16px" color="#000" /> &nbsp;
@@ -39,9 +39,10 @@ const GymList = () => {
         />
       </div>
 
+      <div className="gym-list-container">
       <ul>
         {gyms.map((gym) => (
-            <li key={gym.id} className="gym-item">
+            <li key={gym.id} className="gym-complete-item">
             <div className="gym-details">
            
               <h2>{gym.name}</h2>
@@ -67,16 +68,13 @@ const GymList = () => {
               <GymGallery images={gym.imageUrl} />
               </p>
               <br></br>
-              {gym.reelInstagramUrl && (
-                <InstagramEmbed reelId={gym.reelInstagramUrl} />
-              )}
-      
+     
             </div>
-            <div className="gym-map">
+            <div className="map-container">
               {gym.mapUrl && (
                 <iframe
                   src={`${mapUrl}${gym.mapUrl}`}
-                  className="responsive-iframe"
+                  className="responsive-iframe-map"
                   title="Mapa da Academia" 
                   allowFullScreen=""
                   loading="lazy"
@@ -89,10 +87,15 @@ const GymList = () => {
                 </a>
               </p>
             </div>
+            <div className="instagram-reel-container">
+              {gym.reelInstagramUrl && (
+                <InstagramEmbed reelId={gym.reelInstagramUrl} />
+              )}</div>
 
           </li>
         ))}
       </ul>
+      </div>
     </div>
   );
 

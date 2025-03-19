@@ -1,4 +1,3 @@
-import { mdiSetCenter } from '@mdi/js';
 import React from 'react';
 
 const Header = () => {
