@@ -43,7 +43,7 @@ const GymList = () => {
       <ul>
         {gyms.map((gym) => (
             <li key={gym.id} className="gym-complete-item">
-            <div className="gym-details">
+            <div className="gym-details-container">
            
               <h2>{gym.name}</h2>
               <p className="p-title">
@@ -64,9 +64,9 @@ const GymList = () => {
                   {" "} @{gym.instagram}
                 </a>
               </p>
-              <p className="p-title">Fotos:
+              <p className="p-title">Fotos:</p>
               <GymGallery images={gym.imageUrl} />
-              </p>
+              
               <br></br>
      
             </div>
@@ -83,7 +83,7 @@ const GymList = () => {
               )}
               <p className="p-answer">
                 <a href={gym.googleRate} target="_blank" rel="noopener noreferrer">
-                  Ver opiniões
+                 Ver opiniões
                 </a>
               </p>
             </div>
