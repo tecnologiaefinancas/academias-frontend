@@ -13,6 +13,9 @@ module.exports = {
         colors: {
           whitesmoke: '#f5f5f5', 
         },
+        fontFamily: {
+          raleway: ['Raleway', 'sans-serif'],
+        },
       }, 
     },
     plugins: [],
