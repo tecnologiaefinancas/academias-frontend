@@ -1,27 +1,40 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { getGyms } from "../services/gymService";
 import Icon from "@mdi/react";
 import { mdiInstagram, mdiMagnify, mdiMapMarker } from "@mdi/js";
 import "./GymList.css";
 import GymGallery from "../components/GymGallery";
 import InstagramEmbed from "./InstagramReel";
+import _ from "lodash";
 
 const GymList = () => {
   const [gyms, setGyms] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
 
-  useEffect(() => {
-    const fetchGyms = async () => {
+  const debouncedFetchGyms = useRef(
+    _.debounce(async (term) => {
       try {
-        const data = await getGyms(searchTerm, searchTerm);
+        setIsLoading(true);
+        const data = await getGyms(term, term, term, term); 
         setGyms(data);
       } catch (error) {
-        console.error("Erro ao buscar academias:", error);
+        console.error("Error to find gyms:", error);
+      } finally {
+        setIsLoading(false);
       }
-    };
+    }, 500)
+  ).current;
 
-    fetchGyms();
-  }, [searchTerm]); // Atualiza a lista de academias sempre que o searchTerm mudar
+  useEffect(() => {
+    debouncedFetchGyms(searchTerm);
+
+    return () => {
+      debouncedFetchGyms.cancel();
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [searchTerm]);
+
 
   const mapUrl = "https://www.google.com/maps/embed?";
 
@@ -39,7 +52,13 @@ const GymList = () => {
         />
       </div>
 
+         {/* Contador */}
+         <p>Total: {gyms.length}</p>
+
       <div className="gym-list-container">
+      {isLoading ? (
+        <p>Carregando...</p>
+      ) : (
       <ul>
         {gyms.map((gym) => (
             <li key={gym.id} className="gym-complete-item">
@@ -94,7 +113,7 @@ const GymList = () => {
 
           </li>
         ))}
-      </ul>
+      </ul>)}
       </div>
     </div>
   );
