@@ -63,8 +63,8 @@ const GymList = () => {
         {gyms.map((gym) => (
             <li key={gym.id} className="gym-complete-item">
             <div className="gym-details-container">
-           
-              <h2>{gym.name}</h2>
+            <div className="gym-title">
+              <h2>{gym.name}</h2></div>
               <p className="p-title">
                 <Icon path={mdiMapMarker} size="14px" color="#000" /> Endereço:
               </p>
@@ -100,16 +100,20 @@ const GymList = () => {
                   referrerPolicy="no-referrer-when-downgrade"
                 ></iframe>
               )}
+              <div className="opinion">
               <p className="p-answer">
                 <a href={gym.googleRate} target="_blank" rel="noopener noreferrer">
                  Ver opiniões
                 </a>
               </p>
+              </div>
             </div>
-            <div className="instagram-reel-container">
+
               {gym.reelInstagramUrl && (
+                            <div className="instagram-reel-container">
                 <InstagramEmbed reelId={gym.reelInstagramUrl} />
-              )}</div>
+                </div>
+              )}
 
           </li>
         ))}

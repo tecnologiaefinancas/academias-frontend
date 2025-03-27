@@ -45,6 +45,10 @@ a:hover {
 
 }
 
+.gym-title {
+  font-size: 1.5rem;
+}
+
 .gym-wrapper {
     @apply flex flex-col gap-6 w-full lg:w-[70%] lg:mx-auto m-[10px];
   }
@@ -83,12 +87,16 @@ a:hover {
   
   
   .map-container {
-    @apply bg-white p-4 rounded-lg shadow-md lg:col-span-5 lg:col-start-8 flex justify-center;
+    @apply bg-white p-4 rounded-lg shadow-md lg:col-span-5 lg:col-start-8 flex flex-col justify-center;
   }
   
 
   .responsive-iframe-map {
-    @apply w-full h-[80%] max-w-[400px] max-h-[300px] border-0 lg:mt-0;
+    @apply w-full h-[80%] max-w-[400px] max-h-[300px] border-0 lg:mt-0 mb-4;;
+  }
+
+  .opinion {
+    @apply mt-4; 
   }
   
   .instagram-reel-container {
