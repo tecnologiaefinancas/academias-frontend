@@ -50,7 +50,7 @@ a:hover {
 }
 
 .gym-wrapper {
-    @apply flex flex-col gap-6 w-full lg:w-[70%] lg:mx-auto m-[10px];
+    @apply flex flex-col gap-6 w-full lg:w-[70%] lg:mx-auto m-[10px] overflow-hidden;
   }
 
   .search-container {
