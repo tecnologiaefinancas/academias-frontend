@@ -1,6 +1,9 @@
 import axios from 'axios';
 
-const API_URL = 'http://localhost:8080/api/gyms';
+const API_URL = `${process.env.REACT_APP_API_URL}`;
+
+
+
 
 export const getGyms = async (searchTerm = "") => {
     try {
@@ -19,7 +22,8 @@ export const getGyms = async (searchTerm = "") => {
 };
 
 
-export const createBook = async (gym) => {
+export const createGym = async (gym) => {
+
     try {
         const response = await axios.post(API_URL, gym);
         return response.data;

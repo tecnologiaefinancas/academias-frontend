@@ -62,6 +62,14 @@ const App = () => {
                     </ProtectedRoute>
                   }
                 />
+                  <Route
+                  path="admin/:id"
+                  element={
+                    <ProtectedRoute>
+                      <AdminPanel />
+                    </ProtectedRoute>
+                  }
+                />
               </Routes>
             </div>
           }
